@@ -1,0 +1,80 @@
+Question 1:
+Define an array of numbers (use any random numbers). Write a program to print only the even numbers of the array. Do not use any library 
+functions, need to do via for loops only
+
+Ans:
+const i = document.querySelector("demo");
+for(i = 10; i <= 20; i++){
+ 
+  if(i % 2 == 0){
+    console.log(i);
+  }
+}
+
+Question 2
+Find the maximum consecutive 1's in an array of 0's and 1's.
+
+Ans:
+const arr = [1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 1];
+const ConsecutiveOnes = (arr = []) => {
+   let left = 0;
+   let right = 0;
+   let max = 0;
+   while (right < arr.length) {
+      if (arr[right] === 0) {
+         if (right - left > max) {
+            max = right - left
+         };
+         right++;
+         left = right;
+      } else {
+         right++
+      };
+   };
+   return right - left > max ? right - left : max;
+}
+console.log(findMaxConsecutiveOnes(arr));
+
+Question 3:
+Suppose you have an array of 101 integers. This array is already sorted and all numbers in this array are consecutive. Each number only 
+occurs once in the array except one number which occurs twice. Write a js code to find the repeated number.
+
+
+Ans:
+function Repeat(arr , size)
+    {
+        var i, j;
+        document.write("Repeated Elements are :");
+        for (i = 0; i < size; i++)
+        {
+            for (j = i + 1; j < size; j++)
+            {
+                if (arr[i] == arr[j])
+                    document.write(arr[i] + " ");
+            }
+        }
+    }
+ 
+var arr = [4, 2, 4, 5, 2, 3, 1];
+var size = arr.length;
+Repeat(arr,size);
+
+
+Question 5:
+Assume there is a object of this format 
+var obj = {
+ “id” : 4, “name” : “abc”,
+ “id” : 10, “name” : “ab2”,
+ “id” : 5, “name” : “abc3”,
+ “id” : 6, “name” : “abc5”
+}
+It can be a dictionary or java object, as per your language of choice. But its key/value pair dictionary simply.
+Write a code to sort the object by id 
+
+
+Ans:
+const sorted=obj.sort(function(a,b)
+{
+return (a.id-b.id)
+}) 
+console.log(sorted);
